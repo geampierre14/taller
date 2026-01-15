@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Clientes</title>
+  <link rel="stylesheet" href="/admin.css" />
+  <script src="/clientes.js" defer></script>
+</head>
+<body class="page-admin">
+  <header class="navbar">
+    <div class="logo">Ordermaster pro</div>
+    <nav class="nav-links">
+      <a href="/admin">Menú</a>
+      <a href="/admin-productos">Productos</a>
+      <a href="/admin-categorias">Categorías</a>
+    </nav>
+    <a class="cta" href="/admin">Volver</a>
+  </header>
+
+  <main class="center">
+    <div class="container" style="width:min(1100px,95vw);">
+      <h1>Clientes</h1>
+      <p>CRUD de clientes (para la rúbrica).</p>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 12px 0;">
+        <input id="q" placeholder="Buscar por nombre o email..." style="flex:1; min-width:240px; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,.15);" />
+        <button class="btn" id="btnNuevo">Nuevo cliente</button>
+      </div>
+
+      <div style="overflow:auto;">
+        <table style="width:100%; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:10px; border-bottom:1px solid rgba(0,0,0,.15);">ID</th>
+              <th style="text-align:left; padding:10px; border-bottom:1px solid rgba(0,0,0,.15);">Nombre</th>
+              <th style="text-align:left; padding:10px; border-bottom:1px solid rgba(0,0,0,.15);">Email</th>
+              <th style="text-align:left; padding:10px; border-bottom:1px solid rgba(0,0,0,.15);">Teléfono</th>
+              <th style="text-align:left; padding:10px; border-bottom:1px solid rgba(0,0,0,.15);">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-bg" id="modalBg" style="position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; padding:18px; z-index:999;">
+    <div class="modal" style="width:min(560px, 96vw); background:#fff; border-radius:16px; padding:18px;">
+      <h2 id="modalTitle">Cliente</h2>
+      <form id="formCliente" style="display:grid; gap:10px;">
+        <input type="hidden" id="clienteId" />
+        <input id="nombre" type="text" placeholder="Nombre" required style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,.18);" />
+        <input id="email" type="email" placeholder="Email" required style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,.18);" />
+        <input id="telefono" type="text" placeholder="Teléfono (opcional)" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,.18);" />
+
+        <div style="display:flex; gap:10px; justify-content:flex-end;">
+          <button type="button" class="cancel" id="btnCancelar" style="padding:10px 12px; border-radius:10px; border:none; cursor:pointer; background: rgba(0,0,0,.08);">Cancelar</button>
+          <button type="submit" class="save" style="padding:10px 12px; border-radius:10px; border:none; cursor:pointer; background:#2ecc71; color:white;">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

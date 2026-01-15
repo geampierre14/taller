@@ -1,0 +1,66 @@
+/*
+ async function login(req, res) {
+}
+
+ async function register(req, res) {
+  console.log(req.body);
+  const username = req.body.username;
+  const email = req.body.email;
+  const password = req.body.password;
+  if(!username||!email||!password){
+    res.status(400).send({status:"Error", message:'Faltan datos'});
+}
+}
+
+export const methods = {
+  login,
+  register
+};
+
+<div class="bubble" style="background:${color}">
+        <img class="product-img"
+     src="${imageForProduct(p)}"
+     alt="${p.Nombre}"
+     onerror="this.onerror=null; this.src='/img/image1.jpg';">
+
+
+      </div>
+
+register.js
+
+document.getElementById("register-Form").addEventListener('submit', async(e)=>{
+    e.preventDefault();
+    console.log(e.target.children.user.value);
+    const res = await fetch("/api/register", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            username: e.target.children.user.value,
+            email: e.target.children.email.value,
+            password: e.target.children.password.value
+        })
+    });
+})
+
+
+<body class="page-admin">
+    <main>
+        <div class="container">
+        <h1>Menú principal</h1>
+      <p>Elige una opción:</p>
+
+      <ul class="menu-links">
+        <li><a class="btn" href="/admin-clientes">Clientes</a></li>
+        <li><a class="btn" href="/admin-productos">Productos</a></li>
+        <li><a class="btn" href="/admin-pedidos">Pedidos</a></li>
+        <li><a class="btn" href="/" id="logout">Cerrar sesión</a></li>
+      </ul>
+      <a href="#" class="action_btn">Get Started</a>
+      <div class="toggle_btn">
+        <wa-icon name="bars"></wa-icon>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+*/

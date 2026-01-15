@@ -1,0 +1,91 @@
+html {
+  --s: 150px; /* control the size*/
+  --c1: #e2d6a1;
+  --c2: #825959;
+  
+  --_g: var(--c1)        6.1%,var(--c2)  6.4% 18.6%,var(--c1) 18.9% 31.1%,
+        var(--c2) 31.4% 43.6%,var(--c1) 43.9% 56.1%,var(--c2) 56.4% 68.6%,#0000 68.9%;
+  background:
+    radial-gradient(var(--s) at 100% 0   ,var(--_g)),
+    radial-gradient(var(--s) at 0    0   ,var(--_g)),
+    radial-gradient(var(--s) at 0    100%,var(--_g)),
+    radial-gradient(var(--s) at 100% 100%,var(--_g)) var(--c1);
+  background-size: var(--s) var(--s);
+}
+
+body{
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100svh;
+
+}
+
+.form-container{
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 60px;
+
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form+p,form p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: larger;
+
+}
+
+input, button{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+button{
+    background-color: #bdb18e;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error{
+    color: rgb(231, 82, 82);
+}
+
+.escondido{
+    display: none;
+}
+
+.sr-only{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.container{
+    text-align: center;
+    background-color: #e5d9d0;
+    padding: 50px;
+    border-radius: 10px;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: center;     /* centra vertical */
+}

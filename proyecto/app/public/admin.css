@@ -1,0 +1,355 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* FONDO */
+body.page-admin {
+  min-height: 100vh;
+  background-image: url("https://st.depositphotos.com/1007566/2853/v/950/depositphotos_28535281-stock-illustration-restaurant-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* para que el contenido no quede debajo de la navbar */
+  padding-top: 90px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR ARRIBA */
+.page-admin .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.page-admin .nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.page-admin .nav-links a,
+.page-admin .cta {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.page-admin .cta {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* CENTRADO PERFECTO DEL CONTENIDO */
+.page-admin .center {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+}
+
+/* CAJA DEL MENÚ */
+.page-admin .container {
+  width: 360px;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+
+  background: #bdb18e;
+}
+
+/* LINKS COMO BOTONES */
+.page-admin .menu-links {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.page-admin .menu-links .btn {
+  text-decoration: none;
+  background: #6f8f9b;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.page-admin .menu-links .btn:hover {
+  opacity: 0.9;
+}
+
+.page-admin .menu-links .logout {
+  background: #c0392b;
+}
+.grid{
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px 10px 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.grid::-webkit-scrollbar{
+  height: 10px;
+}
+
+.card{
+  flex: 0 0 260px;     /* ancho fijo de cada tarjeta */
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.section{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.categoria-title{
+  text-align: center;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 800;
+  margin: 20px 0 15px;
+}
+
+.grid{
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 10px 20px 25px;
+  scroll-snap-type: x mandatory;
+}
+
+.card{
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+.rail{
+  display: block;
+  width: 100%;
+}
+.categoria-title{
+  text-align:center;
+  font-size:32px;
+  font-weight:800;
+  margin: 20px 0 10px;
+}
+.section{
+  width: 100%;
+  margin: 10px 0 30px;
+}
+
+/* FORZAR que las secciones vayan una debajo de la otra */
+#rail, .rail, .catalogo, .contenedor-catalogo, .container {
+  display: block !important;
+}
+
+/* cada bloque categoria ocupa todo el ancho */
+.section {
+  display: block !important;
+  width: 100% !important;
+  clear: both;
+  margin: 25px 0;
+}
+
+/* carrusel horizontal dentro de cada categoria */
+.section .grid {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  gap: 30px;
+  padding: 10px 20px 25px;
+}
+
+/* Cuadro blanco donde va la imagen */
+.product-img-wrap{
+  width: 110px;
+  height: 110px;
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* La imagen siempre centrada y sin deformarse */
+.product-img{
+  width: 90px;
+  height: 90px;
+  object-fit: contain;   /* o "cover" si prefieres que llene recortando */
+  display: block;
+}
+.section {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}
+
+.section {
+  margin: 10px 0 25px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+.section-row {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 20px;
+  overflow-x: auto;
+}
+
+.food-card {
+  width: 220px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.bubble {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+}
+
+.img-box {
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,.15);
+}
+
+.food-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.food-name {
+  font-weight: 800;
+  margin-top: 5px;
+}
+
+.food-stock {
+  color: #555;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.food-price {
+  color: #1d4ed8;
+  font-size: 22px;
+  font-weight: 900;
+  margin-top: 3px;
+}
+
+.food-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-edit {
+  background: #ddd;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-del {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.section-row{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 35px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  padding: 10px 20px !important;
+  scroll-behavior: smooth;
+}
+
+.food-card{
+  flex: 0 0 auto !important;
+  width: 220px !important;
+}
+/* ===== FORZAR RAIL DEFINITIVO ===== */
+#rail {
+  display: block !important;
+  width: 100% !important;
+}
+
+#rail .section {
+  width: 100% !important;
+}
+
+#rail .section-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 35px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  padding: 10px 20px !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+#rail .food-card {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  width: 220px !important;
+  min-width: 220px !important;
+  flex: 0 0 auto !important;
+}
