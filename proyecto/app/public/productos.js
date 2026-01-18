@@ -24,11 +24,11 @@ let activeGrid = null; // para mover el carrusel en la sección activa
 
 function imageForProduct(p) {
   // Si el producto tiene imagen en la BD, úsala
-  if (p.imagen) {
-    return `/img/${p.imagen}`;
+  if (p.Imagen) {
+    return `/${p.Imagen}`;
   }
 
-  // Si no, usa imágenes por defecto según el índice
+  // Si no, usa imagen por defecto
   return '/img/image1.jpg';
 }
 
@@ -286,27 +286,17 @@ async function cargarProductos() {
     return;
   }
 
+  // Verificar que data sea un array
+  if (!Array.isArray(data)) {
+    console.error('La respuesta no es un array:', data);
+    rail.innerHTML = '<div style="text-align:center; padding:40px;">Error al cargar productos</div>';
+    return;
+  }
+
+  // Asignar a la variable global
+  productos = data;
+
   rail.innerHTML = data.map((p, i) => renderCard(p, i)).join('');
 }
 
 cargarProductos();
-rail.innerHTML = '';
-
-const desayuno = data.filter(p => p.CategoriaID == 1);
-const almuerzo = data.filter(p => p.CategoriaID == 2);
-
-function renderSection(title, arr) {
-  if (!arr.length) return '';
-  return `
-    <div class="section">
-      <h2 class="section-title">${title}</h2>
-      <div class="section-row">
-        ${arr.map((p, i) => renderCard(p, i)).join('')}
-      </div>
-    </div>
-  `;
-}
-
-rail.innerHTML =
-  renderSection('🍳 Desayunos', desayuno) +
-  renderSection('🍲 Almuerzos', almuerzo);

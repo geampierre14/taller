@@ -7,7 +7,7 @@ import { pool } from "../db.js";
 
 async function list(req, res) {
   try {
-  const [rows] = await pool.query(
+    const [rows] = await pool.query(
       "SELECT ProductoID, Nombre, Precio, Stock, CategoriaID, Imagen FROM Producto ORDER BY CategoriaID, ProductoID"
     );
     res.json(rows);
